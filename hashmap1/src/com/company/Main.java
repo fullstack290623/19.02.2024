@@ -49,5 +49,7 @@ public class Main {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
 
+        // String text = "Your example string goes here! Make sure it's a good one.";
+        // count how many times the same letter is repeated?
     }
 }
