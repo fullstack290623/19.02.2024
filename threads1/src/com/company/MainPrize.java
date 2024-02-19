@@ -12,14 +12,13 @@ public class MainPrize {
     //   each 50 mili guess number 1-100
     //   if the number is correct then he wins the price (bonus: interrupts the 1nd thief)
     static boolean found = false;
-    static int i;
 
     public static void main(String[] args) {
 
         Random r = new Random();
         int safe = r.nextInt(100) + 1;
 
-        for(i = 1; i <= 2; i++) {
+        for(int i = 1; i <= 2; i++) {
             new Thread(() -> {
                 while (!found) {
                     try {
@@ -28,7 +27,7 @@ public class MainPrize {
                         e.printStackTrace();
                     }
                     int guess = r.nextInt(100) + 1;
-                    System.out.println("Thief " + Thread.currentThread().getName() + " guessed " + guess);
+                    System.out.println("Thief " + Thread.currentThread().getName() + " guessed " + guess + ". prize = " + safe);
                     if (guess == safe) {
                         System.out.println("Thief " + Thread.currentThread().getName() + " founded!!");
                         found = true;
