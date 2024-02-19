@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
+import java.util.*;
 
 public class Main {
 
@@ -33,6 +31,20 @@ public class Main {
         text = text.replace(";", "");
         String[] words = text.split("\\s+");
         //Arrays.stream(words).forEach(word -> System.out.println(word));
+
+        ArrayList<Integer> numbers = new ArrayList<Integer>(Arrays.asList(1, 3, 5, 7, 9));
+        var result = numbers.stream().filter(x -> x > 5); // 7, 9
+        numbers.add(12);
+        //numbers.stream().filter(x -> x > 5); // 7, 9, 12
+        System.out.println(result.count()); // 3
+
+
+        numbers.stream().filter(x -> x > 4);
+
+        var stream1 = numbers.stream();
+        var filter1 = stream1.filter(x -> x > 5).count();
+        //var filter2 = stream1.filter(x -> x > 5).count(); // error - needs to create a new stream
+
         // DDD-DDDDDD
         // 4580-
         HashMap<String, Integer> wordsCount = new HashMap<>();
